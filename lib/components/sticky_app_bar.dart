@@ -27,7 +27,7 @@ class StickyAppBar extends StatelessWidget {
       ),
       backgroundColor: Colors.black,
       leading: Icon(Icons.arrow_back_rounded),
-      title: Text(widget.title),
+      title: Center(child: Text(widget.title)),
       bottom: PreferredSize(
         preferredSize: Size.fromHeight(260),
         child: Column(

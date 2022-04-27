@@ -13,7 +13,6 @@ import 'package:moni_test/components/sticky_app_bar.dart';
 import 'package:moni_test/components/tile_header.dart';
 import 'package:moni_test/constant.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class MyHomePage extends StatefulWidget {

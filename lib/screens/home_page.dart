@@ -12,6 +12,7 @@ import 'package:moni_test/components/overdue_loan_tile.dart';
 import 'package:moni_test/components/sticky_app_bar.dart';
 import 'package:moni_test/components/tile_header.dart';
 import 'package:moni_test/constant.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -52,14 +53,14 @@ class _MyHomePageState extends State<MyHomePage>
               if (!tabController.indexIsChanging) {}
             },
           );
-          return SafeArea(
-            child: Scaffold(
-              appBar: PreferredSize(
-                preferredSize: Size.fromHeight(300),
-                child:
-                    StickyAppBar(widget: widget, tabController: _tabController),
-              ),
-              body: TabBarView(controller: _tabController, children: [
+          return Scaffold(
+            appBar: PreferredSize(
+              preferredSize: Size.fromHeight(300),
+              child:
+                  StickyAppBar(widget: widget, tabController: _tabController),
+            ),
+            body: SafeArea(
+              child: TabBarView(controller: _tabController, children: [
                 // this is the first tab view (members)
                 SingleChildScrollView(
                   child: Padding(
@@ -195,14 +196,48 @@ class _MyHomePageState extends State<MyHomePage>
                               SizedBox(
                                 height: 10,
                               ),
-                              ClusterLinkTextRow(
-                                firstLineText: 'Member invite code',
-                                linkText: 'Get new code',
-                                secondLineSize: 16,
-                                secondLineText: '30DF38TG000',
-                                firstLineColor: dark,
-                                firstLineSize: 14,
-                                secondLineColor: darker,
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Member invite code',
+                                        style: TextStyle(
+                                            color: darker,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w400,
+                                            height: 1.3),
+                                      ),
+                                      GestureDetector(
+                                        onTap: () {
+                                          Share.share(
+                                              'Hello, join me on https://app.moni.com/30DF38TG000');
+                                        },
+                                        child: Text(
+                                          '30DF38TG000',
+                                          style: TextStyle(
+                                              color: darker,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w400,
+                                              height: 1.9),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Text(
+                                    'Get new code',
+                                    style: TextStyle(
+                                        color: primaryBrandBase,
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.w400,
+                                        height: 1.2),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
@@ -487,10 +522,12 @@ class _MyHomePageState extends State<MyHomePage>
     );
   }
 
+// launch WhatsApp supports iOS, Android and Web
   openwhatsapp() async {
     String whatsapp = "+2348135536304";
-    String whatsappURlAndroid =
-        "whatsapp://send?phone=" + whatsapp + "&text=Hello Chiadika, we've viewed your submission";
+    String whatsappURlAndroid = "whatsapp://send?phone=" +
+        whatsapp +
+        "&text=Hello Chiadika, we've viewed your submission";
     String whatappURLIos =
         "https://wa.me/$whatsapp?text=${Uri.parse("Hello Chiadika, we've viewed your submission")}";
     if (Platform.isIOS) {

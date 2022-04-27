@@ -12,7 +12,7 @@ A few resources to get you started if this is your first Flutter project:
 
 ###Installation instructions / Run Instructions
 
-I used the Pub.dev online dart package manager and you'll notice the .pubspec.yaml file in this code repository.
+This app uses the Pub.dev online dart package manager and you'll notice the .pubspec.yaml file in this code repository.
 
 Step 1: *installation* pull this repository with the git clone command
 

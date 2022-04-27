@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
 import 'package:moni_test/components/active_loan_tile.dart';
@@ -23,8 +23,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
-
-  // List<Tab> tabs = <Tab>[];
 
   @override
   void initState() {
@@ -52,10 +50,12 @@ class _MyHomePageState extends State<MyHomePage>
           );
           return Scaffold(
             appBar: PreferredSize(
-                preferredSize: Size.fromHeight(300),
-                child: StickyAppBar(
-                    widget: widget, tabController: _tabController)),
+              preferredSize: Size.fromHeight(300),
+              child:
+                  StickyAppBar(widget: widget, tabController: _tabController),
+            ),
             body: TabBarView(controller: _tabController, children: [
+              // this is the first tab view (members)
               SingleChildScrollView(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
@@ -77,15 +77,17 @@ class _MyHomePageState extends State<MyHomePage>
                           "Tiamiyu Adzan", 3, '₦10,555,000'),
                       DueTodayLoanTile('assets/images/Avatar-3.png',
                           "Eze Tarka", 1, '₦10,555,000'),
+                      //  Active loans
                       tileHeader(
                         tileHeaderTitle: 'Active Loans',
                       ),
                       ActiveLoanTile('assets/images/Avatar-4.png',
                           "Halima Yaya", 2, '₦10,555,000'),
-                      ActiveLoanTile('assets/images/Avatar-5.png',
-                          "Uche Ngozi", 2, '₦10,555,000'),
-                      ActiveLoanTile('assets/images/Avatar-6.png',
-                          "Anisa Lulu", 2, '₦10,555,000'),
+                      ActiveLoanTile('assets/images/Avatar-5.png', "Uche Ngozi",
+                          2, '₦10,555,000'),
+                      ActiveLoanTile('assets/images/Avatar-6.png', "Anisa Lulu",
+                          2, '₦10,555,000'),
+                      // Inactive loans
                       tileHeader(
                         tileHeaderTitle: 'Inactive Loans',
                       ),
@@ -105,6 +107,8 @@ class _MyHomePageState extends State<MyHomePage>
                   ),
                 ),
               ),
+
+              // this is the second tab view (cluster details)
               SingleChildScrollView(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
@@ -112,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage>
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // Overdue loans
+                      // cluster purse setting
                       ClusterTileHeader(
                         tileHeaderTitle: 'Cluster purse setting',
                         clusterHeaderIcon: 'assets/icons/badge-dollar.png',
@@ -157,6 +161,8 @@ class _MyHomePageState extends State<MyHomePage>
                           ],
                         ),
                       ),
+
+                      //  Group invite link/code
                       ClusterTileHeader(
                         tileHeaderTitle: 'Group Invite Link/Code',
                         clusterHeaderIcon: 'assets/icons/link.png',
@@ -196,6 +202,8 @@ class _MyHomePageState extends State<MyHomePage>
                           ],
                         ),
                       ),
+
+                      // Loan settings
                       ClusterTileHeader(
                         tileHeaderTitle: 'Loan Setting',
                         clusterHeaderIcon: 'assets/icons/task-list.png',
@@ -243,6 +251,8 @@ class _MyHomePageState extends State<MyHomePage>
                           ],
                         ),
                       ),
+
+                      //  Pending join request
                       ClusterTileHeader(
                         tileHeaderTitle: 'Pending Join Request',
                         clusterHeaderIcon: 'assets/icons/task-list.png',
@@ -271,6 +281,8 @@ class _MyHomePageState extends State<MyHomePage>
                           ],
                         ),
                       ),
+
+                      // Group settings
                       ClusterTileHeader(
                         tileHeaderTitle: 'Group Settings',
                         clusterHeaderIcon: 'assets/icons/biking-mountain.png',
@@ -364,6 +376,7 @@ class _MyHomePageState extends State<MyHomePage>
                         ),
                       ),
 
+                      // Benefits earned
                       ClusterTileHeader(
                         tileHeaderTitle: 'Benefits earned',
                         clusterHeaderIcon: 'assets/icons/money-bill.png',

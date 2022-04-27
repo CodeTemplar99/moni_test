@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:moni_test/components/divider_line.dart';
 import 'package:moni_test/components/text_with_background_color.dart';
 import 'package:moni_test/constant.dart';
-import 'package:moni_test/main.dart';
 import 'package:moni_test/screens/home_page.dart';
 
 class StickyAppBar extends StatelessWidget {
@@ -201,7 +200,6 @@ class StickyAppBar extends StatelessWidget {
                     ),
                   ),
                 ],
-                // labelColor: Colors.black,
                 indicatorColor: Colors.grey,
                 labelColor: primaryBrandBase,
                 unselectedLabelColor: dark,

@@ -13,3 +13,5 @@ const yellowDarkest = Color(0xFFA05E03);
 const greenDarkest = Color(0xFF198155);
 const darkLighter = Color(0xFF72777A);
 const dark = Color(0xFF303437);
+const darker = Color(0xFF202325);
+const greydark = Color(0xFF979C9E);

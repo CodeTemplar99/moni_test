@@ -10,7 +10,7 @@ It provides a simple way to add share an invite code and also has the feature to
 
 A few resources to get you started if this is your first Flutter project:
 
-###Installation instructions / Run Instructions
+### Installation instructions / Run Instructions
 
 This app uses the Pub.dev online dart package manager and you'll notice the .pubspec.yaml file in this code repository.
 

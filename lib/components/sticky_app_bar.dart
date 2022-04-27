@@ -20,6 +20,7 @@ class StickyAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      centerTitle: true,
       elevation: 0,
       flexibleSpace: Image(
         image: AssetImage('assets/images/BG.png'),
@@ -27,7 +28,7 @@ class StickyAppBar extends StatelessWidget {
       ),
       backgroundColor: Colors.black,
       leading: Icon(Icons.arrow_back_rounded),
-      title: Center(child: Text(widget.title)),
+      title: Text(widget.title),
       bottom: PreferredSize(
         preferredSize: Size.fromHeight(260),
         child: Column(

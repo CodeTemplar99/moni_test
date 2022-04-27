@@ -22,6 +22,16 @@ Step 2a: Type *Flutter run* in terminal or *Click the play icon* in VScode to ru
 
 Step 3 (optional): select *desired device* in the list of available devices
 
+### Repository structure
+
+*APK file* : contains the app-debug.apk file
+*assets* : holds all graphic resources for this app
+*lib/components* find resusable page components here
+*lib/screens* contain app screen(s)
+*constant* reusable UI values
+
+*the subfolders in lib that are not mentioned above are empty*
+
 
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,

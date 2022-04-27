@@ -1,15 +1,37 @@
 # moni_test
 
-A new Flutter project.
+A Flutter x-platform project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This is a flutter app that runs on iOS and Android.
+It provides a simple way to add share an invite code and also has the feature to mesaage through the whatsapp link.
+
 
 A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Installation instructions / Run Instructions
+
+This app uses the Pub.dev online dart package manager and you'll notice the .pubspec.yaml file in this code repository.
+
+Step 1: *installation* pull this repository with the git clone command
+
+Step 2: Run *Flutter pub get* to install the required app dependencies
+
+Step 2a: Type *Flutter run* in terminal or *Click the play icon* in VScode to run this app.
+
+Step 3 (optional): select *desired device* in the list of available devices
+
+### Repository structure
+
+*APK file* : contains the app-debug.apk file
+*assets* : holds all graphic resources for this app
+*lib/components* find resusable page components here
+*lib/screens* contain app screen(s)
+*constant* reusable UI values
+
+*the subfolders in lib that are not mentioned above are empty*
+
 
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,

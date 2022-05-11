@@ -174,28 +174,24 @@ class StickyAppBar extends StatelessWidget {
               child: TabBar(
                 controller: _tabController,
                 tabs: [
-                  Expanded(
-                    child: SizedBox(
-                      height: 40,
-                      child: Center(
-                        child: Text(
-                          'Members (9)',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
+                  SizedBox(
+                    height: 40,
+                    child: Center(
+                      child: Text(
+                        'Members (9)',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
                   ),
-                  Expanded(
-                    child: SizedBox(
-                      height: 40,
-                      child: Center(
-                        child: Text(
-                          'Cluster Details',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
+                  SizedBox(
+                    height: 40,
+                    child: Center(
+                      child: Text(
+                        'Cluster Details',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),

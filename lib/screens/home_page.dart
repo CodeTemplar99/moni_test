@@ -46,10 +46,11 @@ class _MyHomePageState extends State<MyHomePage>
       length: 2,
       child: Builder(
         builder: (BuildContext context) {
-          final TabController? tabController = DefaultTabController.of(context);
-          tabController!.addListener(
+          final TabController? _tabController =
+              DefaultTabController.of(context);
+          _tabController!.addListener(
             () {
-              if (!tabController.indexIsChanging) {}
+              if (!_tabController.indexIsChanging) {}
             },
           );
           return Scaffold(
